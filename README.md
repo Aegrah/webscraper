@@ -14,3 +14,8 @@ To do's:
 - Add user options:
   - Allow users to specify URL
   - Set user properties (type of house, price, neighbourhood etc.)
+
+Added randomized sleeptimers and user agents. Also added a line to break the program after 12 hours. To execute every day from 6 AM, run the script using a cronjob:
+```
+0 6 * * * /home/aegrah/development/webscraper/main.py
+```
