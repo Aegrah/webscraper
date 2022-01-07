@@ -139,12 +139,12 @@ def find_new_advertisements(uids):
     return uids
 
 if __name__ == "__main__": 
-    # Setting the base line of the current advertisements so we don't get spammed with the first 10 results
+    # Setting the base line of the current advertisements so we don't get spammed with the first results
     set_baseline(uids)
 
-    # Find new advertisements, if there is none, then sleep and try again in 10 minutes
+    # Find new advertisements, if there is none, then sleep and try again in 10 to 20 minutes
     while True:
         find_new_advertisements(uids)
-        print("Scraping completed! Will sleep now for a bit!\n")
+        print("Scraping completed! Sleeping...\n")
         sleep(randint(600, 1200))
         if time.time() > start + time_to_exit: break
