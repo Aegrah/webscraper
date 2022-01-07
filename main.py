@@ -4,8 +4,10 @@ import requests
 import sys
 
 # Randomizing request headers and time
-from random import random, randint
-from time import time, sleep
+import random
+from random import randint
+import time
+from time import sleep
 from collections import OrderedDict
 from typing import OrderedDict
 
@@ -16,7 +18,7 @@ import headers
 import smtplib
 
 # Dealing with credentials
-sys.path.append("/home/ruben/development/credentials")
+sys.path.append("/home/aegrah/development/credentials")
 import credentials
 username = credentials.username
 password = credentials.password
