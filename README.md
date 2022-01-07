@@ -8,9 +8,9 @@ Can be hosted on a VPS or hosting platform such as pythonanywhere or Heroku in o
 To do's:
 - Telegram bot to push notifications
 - Evade robot checks:
-  - ~~Set randomized sleep timers
-  - ~~Set randomized user-agents
-  - ~~Set scraping times at working hours (8 PM - 7 PM)
+  - ~~Set randomized sleep timers~~
+  - ~~Set randomized user-agents~~
+  - ~~Set scraping times at working hours (8 PM - 7 PM)~~
 - Add user options:
   - Allow users to specify URL
   - Set user properties (type of house, price, neighbourhood etc.)
