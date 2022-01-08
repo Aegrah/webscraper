@@ -30,6 +30,7 @@ time_to_exit = 43200 # 12 hours
 # Set global variables
 funda_url = "https://www.funda.nl"
 request_url = "/koop/maastricht/0-300000/sorteer-datum-af/"
+validated_cookie = headers.cookies
 uids = []
 
 # Set function to send email
@@ -44,11 +45,11 @@ def send_email(username, password, message):
 def set_baseline(uids):
     # Get random header
     random_header = random.choice(headers.headers_list)
-    
+
     # Request the page, and extract the data
     r = requests.session()
     r.headers = random_header
-    response = r.get(funda_url + request_url).text
+    response = r.get(funda_url + request_url, cookies = validated_cookie).text
     soup = BeautifulSoup(response, "lxml")
 
     # Extract data from list item on page
@@ -82,7 +83,7 @@ def find_new_advertisements(uids):
     # Request the page and extract data
     r = requests.session()
     r.headers = random_header
-    response = r.get(funda_url + request_url).text
+    response = r.get(funda_url + request_url, cookies = validated_cookie).text
     soup = BeautifulSoup(response, "lxml")
 
     # Extract data from list item on page
@@ -93,7 +94,7 @@ def find_new_advertisements(uids):
             r = requests.session()
             r.headers = random_header
             advertisement_href = advertisement.find(href = True)
-            funda_advertisement = r.get(funda_url + advertisement_href["href"]).text
+            funda_advertisement = r.get(funda_url + advertisement_href["href"], cookies = validated_cookie).text
             soup_advertisement = BeautifulSoup(funda_advertisement, "lxml")
 
             address = soup_advertisement.find("span", {"class":"object-header__title"}).text
