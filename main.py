@@ -25,7 +25,7 @@ password = credentials.password
 
 # Set time variables
 start = time.time()
-time_to_exit = 43200 # 12 hours
+time_to_exit = 50400 # 14 hours
 
 # Set global variables
 funda_url = "https://www.funda.nl"

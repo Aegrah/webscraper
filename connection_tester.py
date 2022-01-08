@@ -10,4 +10,7 @@ r.headers = random_header
 
 response = requests.get('https://www.funda.nl/koop/maastricht/0-300000/sorteer-datum-af/', cookies=validated_cookie).text
 
-print(response)
+if "We houden ons platform graag veilig en spamvrij." in response:
+        print("The cookie is no longer valid!")
+else:
+        print("The cookie is still valid!")
