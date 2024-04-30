@@ -35,7 +35,7 @@ uids = []
 
 # Set function to send email
 def send_email(username, password, message):
-    receiver = "r.f.groenewoud98@gmail.com"
+    receiver = ""
     server = smtplib.SMTP_SSL("smtp.gmail.com", 465)
     server.login(username, password)
     server.sendmail(username, receiver, message)
